@@ -1,5 +1,5 @@
 # calculator_app
-a smartphone mobile application
+a smartphone calculator mobile application
 
 
 ## APP UI
