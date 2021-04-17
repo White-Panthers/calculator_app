@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/display"
         app:layout_constraintVertical_bias="0.95"
         tools:layout_editor_absoluteX="30dp">
 
@@ -23,6 +23,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="clearButton"
                 android:text="@string/delete"
                 android:textColor="@color/black"
                 android:textSize="28sp" />
@@ -33,6 +34,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="deleteButton"
                 android:text="@string/clear"
                 android:textColor="@color/black"
                 android:textSize="28sp" />
@@ -48,6 +50,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="nineButton"
                 android:text="@string/nine"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -58,6 +61,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="eightButton"
                 android:text="@string/eight"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -68,6 +72,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="sevenButton"
                 android:text="@string/seven"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -78,6 +83,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="addButton"
                 android:text="@string/add"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -93,6 +99,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="sixButton"
                 android:text="@string/six"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -103,6 +110,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="fiveButton"
                 android:text="@string/five"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -113,6 +121,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="fourButton"
                 android:text="@string/four"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -123,6 +132,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="subtractButton"
                 android:text="@string/subtract"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -138,6 +148,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="threeButton"
                 android:text="@string/three"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -148,6 +159,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="twoButton"
                 android:text="@string/two"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -158,6 +170,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="oneButton"
                 android:text="@string/one"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -168,6 +181,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="divideButton"
                 android:text="@string/divide"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -183,6 +197,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="zeroButton"
                 android:text="@string/zero"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -193,6 +208,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="decimalButton"
                 android:text="@string/decimal"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -203,6 +219,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="equalButton"
                 android:text="@string/equals"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -213,6 +230,7 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:onClick="multiplyButton"
                 android:text="@string/multiply"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -220,17 +238,17 @@
     </TableLayout>
 
     <EditText
-        android:id="@+id/textView"
+        android:id="@+id/display"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="TextView"
+        android:autofillHints="false"
+        android:inputType="none"
+        android:text="@string/text"
+        android:textAlignment="textEnd"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="false"
-        android:inputType="none"
-        android:textSize="36sp"
-        android:textAlignment="textEnd"
         tools:ignore="LabelFor" />
 </androidx.constraintlayout.widget.ConstraintLayout>
