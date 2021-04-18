@@ -37,7 +37,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void equalButton(View view){
+        String userInput = textBox.getText().toString();
+        Expression expression = new Expression(userInput);
+        String result = String.valueOf(expression.calculate());
 
+        textBox.setText(result);
+        textBox.setSelection(result.length());
     }
 
     public void multiplyButton(View view){
