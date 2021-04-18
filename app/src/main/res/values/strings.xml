@@ -19,6 +19,6 @@
     <string name="delete">C</string>
     <string name="equals">=</string>
     <string name="decimal">.</string>
-    <string name="text">.</string>
+    <string name="text">""</string>
 
 </resources>
