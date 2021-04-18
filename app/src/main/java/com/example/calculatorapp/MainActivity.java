@@ -3,6 +3,7 @@ package com.example.calculatorapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.EditText;
 
@@ -92,7 +93,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void deleteButton(View view){
+        int cursorPosition = textBox.getSelectionStart();
+        int length = textBox.getText().length();
 
+        if(cursorPosition != 0 && length != 0){
+            SpannableStringBuilder text = (SpannableStringBuilder) textBox.getText();
+            text.replace(cursorPosition - 1, cursorPosition, "");
+            textBox.setText(text);
+            textBox.setSelection(cursorPosition-1);
+        }
     }
 
     public void clearButton(View view){
