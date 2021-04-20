@@ -33,7 +33,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void decimalButton(View view){
-        updateText(".");
+        String text = textBox.getText().toString();
+        String[] splits = text.split("(?<=[-+*/])|(?=[-+*/])");
+
+
+        if(!splits[splits.length-1].contains(".")) {
+            updateText(".");
+        }
     }
 
     public void equalButton(View view){
