@@ -1,11 +1,15 @@
 package com.example.calculatorapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import org.mariuszgromada.math.mxparser.*;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +22,25 @@ public class MainActivity extends AppCompatActivity {
 
         textBox = findViewById(R.id.display);
         textBox.setShowSoftInputOnFocus(false);
+        Switch toggle = (Switch) findViewById(R.id.switch1);
+        Boolean switchState = toggle.isChecked();
+
+        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    toggle.setText("Dark");
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }
+                else {
+                    toggle.setText("Light");
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+            }
+        });
     }
+
+
 
     private void updateText(String string){
         String oldString = textBox.getText().toString();

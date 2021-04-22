@@ -20,5 +20,7 @@
     <string name="equals">=</string>
     <string name="decimal">.</string>
     <string name="text">""</string>
+    <string name="lightText">"Light"</string>
+    <string name="darkText">"Light"</string>
 
 </resources>
