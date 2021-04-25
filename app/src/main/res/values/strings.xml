@@ -19,7 +19,7 @@
     <string name="multiply">*</string>
     <string name="divide">/</string>
     <string name="clear">C</string>
-    <string name="delete">CE</string>
+    <string name="delete"> </string>
     <string name="equals">=</string>
     <string name="decimal">.</string>
     <string name="text">""</string>
