@@ -116,6 +116,9 @@ public class MainActivity extends AppCompatActivity {
     public void eightButton(View view){
         updateText("8");
     }
+    public void negativeBtn(View view){
+        updateText("-");
+    }
 
     public void sevenButton(View view){
         updateText("7");
@@ -140,4 +143,5 @@ public class MainActivity extends AppCompatActivity {
     public void clearButton(View view){
         textBox.setText("");
     }
+
 }

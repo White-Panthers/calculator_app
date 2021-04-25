@@ -10,13 +10,16 @@
     <string name="seven">7</string>
     <string name="eight">8</string>
     <string name="nine">9</string>
+    <string name="negative">+/-</string>
+    <string name="parenthesis">( )</string>
+    <string name="power">^</string>
 
     <string name="add">+</string>
     <string name="subtract">-</string>
     <string name="multiply">*</string>
     <string name="divide">/</string>
-    <string name="clear">CE</string>
-    <string name="delete">C</string>
+    <string name="clear">C</string>
+    <string name="delete">CE</string>
     <string name="equals">=</string>
     <string name="decimal">.</string>
     <string name="text">""</string>
