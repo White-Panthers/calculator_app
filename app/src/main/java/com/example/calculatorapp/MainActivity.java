@@ -73,8 +73,33 @@ public class MainActivity extends AppCompatActivity {
         textBox.setSelection(result.length());
     }
 
-    public void multiplyButton(View view){
-        updateText("*");
+    public void multiplyButton(View view) {
+        String text = textBox.getText().toString();
+        char last = text.charAt(text.length() - 1);
+
+        if (last == '*') {
+            return;
+        }
+        else {
+            if (!checkOperand(last)) {
+                updateText("*");
+            }
+            else {
+                text = text.substring(0, text.length() - 1) + "*";
+                textBox.setText(text);
+                textBox.setSelection(text.length());
+            }
+        }
+    }
+
+    public boolean checkOperand(char last){
+        char[] op = { '+', '-', '×', '/' };
+
+        for(char ch : op){
+            if(ch == last)
+                return true;
+        }
+        return false;
     }
 
     public void threeButton(View view){
@@ -90,7 +115,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void divideButton(View view){
-        updateText("/");
+        String text = textBox.getText().toString();
+        char last = text.charAt(text.length() - 1);
+
+        if (last == '/') {
+            return;
+        }
+        else {
+            if (!checkOperand(last)) {
+                updateText("/");
+            }
+            else {
+                text = text.substring(0, text.length() - 1) + "/";
+                textBox.setText(text);
+                textBox.setSelection(text.length());
+            }
+        }
     }
 
     public void sixButton(View view){
@@ -106,7 +146,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void subtractButton(View view){
-        updateText("-");
+        String text = textBox.getText().toString();
+        char last = text.charAt(text.length() - 1);
+
+        if (last == '-') {
+            return;
+        }
+        else {
+            if (!checkOperand(last)) {
+                updateText("-");
+            }
+            else {
+                text = text.substring(0, text.length() - 1) + "-";
+                textBox.setText(text);
+                textBox.setSelection(text.length());
+            }
+        }
     }
 
     public void nineButton(View view){
@@ -117,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
         updateText("8");
     }
     public void negativeBtn(View view){
+        int cursorPosition = textBox.getSelectionStart();
         updateText("-");
     }
 
@@ -125,7 +181,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addButton(View view){
-        updateText("+");
+        String text = textBox.getText().toString();
+        char last = text.charAt(text.length() - 1);
+
+        if (last == '+') {
+            return;
+        }
+        else {
+            if (!checkOperand(last)) {
+                updateText("+");
+            }
+            else {
+                text = text.substring(0, text.length() - 1) + "+";
+                textBox.setText(text);
+                textBox.setSelection(text.length());
+            }
+        }
     }
 
     public void deleteButton(View view){
