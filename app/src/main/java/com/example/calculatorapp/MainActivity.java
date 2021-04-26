@@ -50,8 +50,19 @@ public class MainActivity extends AppCompatActivity {
         textBox.setText(String.format("%s%s%s",leftString, string, rightString));
         textBox.setSelection(cursorPosition+1);
     }
+
     public void zeroButton(View view){
         updateText("0");
+    }
+
+    public boolean checkOperand(char last){
+        char[] op = { '+', '-', '×', '/', '^' };
+
+        for(char ch : op){
+            if(ch == last)
+                return true;
+        }
+        return false;
     }
 
     public void decimalButton(View view){
@@ -90,16 +101,6 @@ public class MainActivity extends AppCompatActivity {
                 textBox.setSelection(text.length());
             }
         }
-    }
-
-    public boolean checkOperand(char last){
-        char[] op = { '+', '-', '×', '/' };
-
-        for(char ch : op){
-            if(ch == last)
-                return true;
-        }
-        return false;
     }
 
     public void threeButton(View view){
@@ -171,9 +172,9 @@ public class MainActivity extends AppCompatActivity {
     public void eightButton(View view){
         updateText("8");
     }
+
     public void negativeBtn(View view){
-        int cursorPosition = textBox.getSelectionStart();
-        updateText("-");
+            updateText("");
     }
 
     public void sevenButton(View view){
@@ -214,8 +215,24 @@ public class MainActivity extends AppCompatActivity {
     public void clearButton(View view){
         textBox.setText("");
     }
+
     public void powerButton(View view){
-        updateText("^");
+        String text = textBox.getText().toString();
+        char last = text.charAt(text.length() - 1);
+
+        if (last == '^') {
+            return;
+        }
+        else {
+            if (!checkOperand(last)) {
+                updateText("^");
+            }
+            else {
+                text = text.substring(0, text.length() - 1) + "^";
+                textBox.setText(text);
+                textBox.setSelection(text.length());
+            }
+        }
     }
 
     public void parenthesisButton(View view){
