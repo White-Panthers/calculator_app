@@ -143,5 +143,32 @@ public class MainActivity extends AppCompatActivity {
     public void clearButton(View view){
         textBox.setText("");
     }
+    public void powerButton(View view){
+        updateText("^");
+    }
+
+    public void parenthesisButton(View view){
+        int cursorPosition = textBox.getSelectionStart();
+        int length = textBox.getText().length();
+        int openParenthesis = 0;
+        int closedParenthesis = 0;
+
+        for(int i=0; i<cursorPosition; i++){
+            if(textBox.getText().toString().substring(i, i+1).equals("(")){
+                openParenthesis = openParenthesis+1;
+            }
+            else if(textBox.getText().toString().substring(i, i+1).equals(")")){
+                closedParenthesis = closedParenthesis+1;
+            }
+        }
+        if(openParenthesis  == closedParenthesis || textBox.getText().toString().substring(length - 1, length).equals("(")){
+            updateText("(");
+        }
+        else if(closedParenthesis  < openParenthesis && !textBox.getText().toString().substring(length - 1, length).equals("(")){
+            updateText(")");
+
+        }
+        textBox.setSelection(cursorPosition+1);
+    }
 
 }

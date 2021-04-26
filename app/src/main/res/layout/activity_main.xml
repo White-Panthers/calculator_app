@@ -42,7 +42,7 @@
                 android:layout_margin="1.5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_background"
-                android:onClick="deleteButton"
+                android:onClick="parenthesisButton"
                 android:text="@string/parenthesis"
                 android:textColor="@color/textColor"
                 android:textSize="28sp" />
@@ -55,7 +55,7 @@
                 android:layout_margin="1.5dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_background"
-                android:onClick="clearButton"
+                android:onClick="powerButton"
                 android:text="@string/power"
                 android:textColor="@color/textColor"
                 android:textSize="28sp" />
