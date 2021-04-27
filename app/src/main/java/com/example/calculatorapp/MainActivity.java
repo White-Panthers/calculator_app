@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean checkOperand(char last){
-        char[] op = { '+', '-', '×', '/', '^' };
+        char[] op = { '+', '-', '*', '/', '^' };
 
         for(char ch : op){
             if(ch == last)
